@@ -1,0 +1,25 @@
+body {
+  font-family: 'Fira sans';
+  margin: 0;
+  padding: 0;
+}
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+}
+#legend {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+  padding: 10px;
+  width: 170px;
+  background-color: #000;
+  color: #fff;
+}
+.legend-item {
+  padding-bottom: 5px;
+}

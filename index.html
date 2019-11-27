@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<title>San Francisco Land Use</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+<link href='map_style.css' rel='stylesheet' />
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<div id='map'></div>
+<div id='legend'>
+  <div id="legent-title">San Francisco Land Use</div>
+  <div class='legend-item'>
+    <svg width="18" height="18"><rect fill="#fee08b" width="18" height="18" y="0"></rect></svg>
+    Residential
+  </div>
+  <div class='legend-item'>
+    <svg width="18" height="18"><rect fill="#fee08b" width="18" height="18" y="0"></rect></svg>
+    Commerical
+  </div>
+  <div class='legend-item'>
+    <svg width="18" height="18"><rect fill="#fee08b" width="18" height="18" y="0"></rect></svg>
+    Industrial
+  </div>
+  <div class='legend-item'>
+    <svg width="18" height="18"><rect fill="#fee08b" width="18" height="18" y="0"></rect></svg>
+    Institutions
+  </div>
+  <div class='legend-item'>
+    <svg width="18" height="18"><rect fill="#fee08b" width="18" height="18" y="0"></rect></svg>
+    Residential
+  </div>
+</div>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1Ijoic2pmIiwiYSI6ImNqOG9tMGRwbzA0eGwzMnBjOHFjdmd2eHMifQ.SOk7S0hxPCSZ_RtrJ1bWhA';
+  var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/sjf/ck2zmq40b06sz1co683zg2imx',
+    center: [-122.40739, 37.78774],
+    zoom: 14.65,
+    hash: true,
+  });
+  map.addControl(new mapboxgl.NavigationControl({showCompass: false}));
+</script>
+
+</body>
+</html>
