@@ -112,3 +112,6 @@ venv.bak/
 *.mbtiles
 *.geojson
 *.cpg
+
+# cred file
+credentials.js

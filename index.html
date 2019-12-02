@@ -5,6 +5,7 @@
 <title>San Francisco Land Use</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+<script src='credentials.js'></script>
 <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
 <link href='map_style.css' rel='stylesheet' />
 <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet" />
@@ -36,7 +37,7 @@
   </div>
 </div>
 <script>
-  mapboxgl.accessToken = 'pk.eyJ1Ijoic2pmIiwiYSI6ImNqOG9tMGRwbzA0eGwzMnBjOHFjdmd2eHMifQ.SOk7S0hxPCSZ_RtrJ1bWhA';
+  mapboxgl.accessToken = ACCESS_TOKEN;
   var map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/sjf/ck2zmq40b06sz1co683zg2imx',
