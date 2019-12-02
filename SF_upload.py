@@ -5,11 +5,11 @@ from data.log import *
 from time import sleep
 import requests
 import json
+from credentials import TOKEN
 
 FILE = get_arg(1, "sf_head_2.mbtiles")
 TILESET_NAME = get_arg(2, "SF_Land_Use-a6y1s5")
 USERNAME = "sjf"
-TOKEN = "sk.eyJ1Ijoic2pmIiwiYSI6ImNrM21ra3htajFnYXEzanQ3bm0yMTQwNWYifQ.kbs4wVFAuuCyFk1I9-Z3Jw"
 CREDENTIALS_URL = f"https://api.mapbox.com/uploads/v1/{USERNAME}/credentials?access_token={TOKEN}"
 UPLOAD_URL = f"https://api.mapbox.com/uploads/v1/{USERNAME}?access_token={TOKEN}"
 
