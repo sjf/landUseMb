@@ -104,10 +104,10 @@ venv.bak/
 .mypy_cache/
 
 # geo files
-.shp
-.shx
-.prj
-.dbf
-.sql
-.mbtiles
-.geojson
+*.shp
+*.shx
+*.prj
+*.dbf
+*.sql
+*.mbtiles
+*.geojson
