@@ -36,16 +36,46 @@
     Residential
   </div>
 </div>
+<div id='info'>
+</div>
 <script>
+  const LAYER_ID = 'landuse (1)';
+  const EMPTY_GEOJSON = {'type': 'geojson', 'data': {'type': 'FeatureCollection', 'features': []}};
   mapboxgl.accessToken = ACCESS_TOKEN;
+
   var map = new mapboxgl.Map({
-    container: 'map', // container id
+    container: 'map',
     style: 'mapbox://styles/sjf/ck2zmq40b06sz1co683zg2imx',
     center: [-122.40739, 37.78774],
     zoom: 14.65,
     hash: true,
   });
-  map.addControl(new mapboxgl.NavigationControl({showCompass: false}));
+  map.on('load', function() {
+    map.addControl(new mapboxgl.NavigationControl({showCompass: false}));
+    map.on('click', function (e) {
+      var bbox = [[e.point.x, e.point.y], [e.point.x + 1, e.point.y + 1]];
+      var features = map.queryRenderedFeatures(bbox, {layers: [LAYER_ID]});
+      for (var i = 0; i < features.length; i++) {
+        console.log(features[i]);
+        var geom = features[i].geometry;
+        map.getSource('selected-src').setData(geom);
+        var s = JSON.stringify(features[i].properties);
+        document.getElementById('info').innerHTML = s;
+      }
+    });
+    map.addSource('selected-src', EMPTY_GEOJSON);
+    map.addLayer(
+    {
+      "id": "selected",
+      "type": "line",
+      "source": 'selected-src',
+      "paint": {
+        "line-color": "#ff0000",
+        "line-opacity": 0.75,
+        "line-width": 4,
+      },
+    });
+  });
 </script>
 
 </body>

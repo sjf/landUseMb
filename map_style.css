@@ -12,8 +12,7 @@ body {
 }
 #legend {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  margin: 20px;
   z-index: 2;
   padding: 10px;
   width: 170px;
@@ -22,4 +21,16 @@ body {
 }
 .legend-item {
   padding-bottom: 5px;
+}
+#info {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  height: 100px;
+  width: calc(100% - 20px);
+  background-color: #fff;
+  color: #000;
+  margin: 10px;
+  box-sizing: content-box;
+  word-wrap: break-word;
 }
