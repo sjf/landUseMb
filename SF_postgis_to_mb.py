@@ -6,6 +6,6 @@ TABLE = get_arg(1, 'sf_head_2')
 INTERIM = TABLE + '.geojson'
 MBTILES = get_arg(2, TABLE + '.mbtiles')
 
-run('/usr/local/Cellar/gdal/2.4.2_3/bin/ogr2ogr -f GeoJSON %s "PG:dbname=sjf" -sql "select * from sf_head_2"' % (INTERIM))
+run(f'/usr/local/Cellar/gdal/2.4.2_3/bin/ogr2ogr -f GeoJSON {INTERIM} "PG:dbname=sjf" -sql "select * from {TABLE}"')
 #run('pgsql2shp -f %s sjf "SELECT * from %s"' % (INTERM, TABLE))
-run('tippecanoe --force -o %s %s' %(MBTILES, INTERIM))
+run(f'tippecanoe --force -o {MBTILES} {INTERIM}')

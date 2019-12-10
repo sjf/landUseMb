@@ -6,9 +6,10 @@ from time import sleep
 import requests
 import json
 from credentials import TOKEN
+from pathlib import Path
 
 FILE = get_arg(1, "sf_head_2.mbtiles")
-TILESET_NAME = get_arg(2, "SF_Land_Use-a6y1s5")
+TILESET_NAME = get_arg(2, Path(FILE).stem)
 USERNAME = "sjf"
 CREDENTIALS_URL = f"https://api.mapbox.com/uploads/v1/{USERNAME}/credentials?access_token={TOKEN}"
 UPLOAD_URL = f"https://api.mapbox.com/uploads/v1/{USERNAME}?access_token={TOKEN}"
